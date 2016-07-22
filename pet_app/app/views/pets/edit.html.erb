@@ -1,3 +1,42 @@
 <h1>Edit</h1>
+<%= form_for(@pet, url: pet_path) do |f| %>
 
-<%= render "form" %>
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Name" %><br>
+    <%= f.text_field :name, autofocus: true, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label "Gender" %><br>
+    <%= f.text_field :gender, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label "Breed" %><br>
+    <%= f.text_field :breed, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label "Bio" %><br>
+    <%= f.text_field :bio, autocomplete: "off" %>
+  </div>
+
+  <!-- hidden field to add relationship between pet and current user -->
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+
+<% end %>

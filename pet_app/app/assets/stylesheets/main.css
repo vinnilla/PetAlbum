@@ -1,23 +1,64 @@
+/*HEADER*/
+/*------*/
 .navigation {
 	background-color:rgba(0,0,0,0.8);
 	color: white;
 }
-
-.link {
+.link a {
 	line-height: 4em;
+	color: white;
+	font-family: 'Harmattan', sans-serif;
+	font-size: 1.1em;
+}
+.logo a {
+	font-size: 2.5em;
+	color: white;
+}
+.link a:hover, .logo a:hover {
+	color:red;
 }
 
+/*FORMS*/
+/*-----*/
+.field {
+	text-align:left;
+}
+.entry {
+	border-style: solid;
+	border-color: white;
+	border-bottom-color: black;
+	margin-bottom: 2em;
+}
+.actions {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+/*USERsMAIN*/
+/*---------*/
+.pet-link a {
+	color: rgba(100,0,0,1);
+}
+.pet-link {
+	margin-bottom: 10em;
+}
+
+/*GENERAL*/
+/*-------*/
 body {
 	text-align: center;
 }
+.title {
+	font-family: 'Harmattan', sans-serif;
+	margin-bottom: 1em;
+}
 
+/*
 @mixin box_sizing {
  -moz-box-sizing:    border-box;
  -webkit-box-sizing: border-box;
  box-sizing:         border-box;
 }
-
-
 .debug_dump {
  clear: both;
  float: left;
@@ -25,3 +66,4 @@ body {
  margin-top: 45px;
  @include box_sizing;
 }
+*/

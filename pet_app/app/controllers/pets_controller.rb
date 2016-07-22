@@ -1,24 +1,22 @@
 class PetsController < ApplicationController
   def main
-    @pets = Pet.all
+    @pets = Pet.where(user_id: current_user.id)
   end
   
   def create
   	@pet = Pet.new(pet_params)
   	if @pet.save
-  		redirect_to 'users/main'
+  		redirect_to pets_path
   	else
   		render :new
   	end
   end
 
   def new
-  	@pet = Pet.new
-    @pet[:user_id] = current_user
+  	@pet = Pet.new()
   end
 
   def show
-    render layout: "main"
   	@pet = set_pet
   end
 
@@ -27,9 +25,9 @@ class PetsController < ApplicationController
   end
 
   def update
-  	@pet = set_pet
+  	@pet = set_pets
   	if @pet.update_attributes(pet_params)
-  		redirect_to 'pets/main'
+  		redirect_to pet_path
   	else
   		render :edit
   	end
@@ -38,7 +36,7 @@ class PetsController < ApplicationController
   def delete
   	@pet = set_pet
   	@pet.destroy
-  	redirect_to 'pets/main'
+  	redirect_to pets_path
   end
 
   private

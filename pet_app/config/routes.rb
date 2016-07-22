@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'users#main'
 
-  get 'users/main'
+  get 'users' => 'users#main'
 
   get 'photos/main'
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   ######
   #PETS
   ######
-  get 'pets/main'
+  get 'pets' => 'pets#main'
   #create profile
   post 'pets' => 'pets#create' #post
   get 'pets/new' => 'pets#new', as: :new_pet #retrieve form
