@@ -1,24 +1,26 @@
 class PetsController < ApplicationController
+  before_action :authenticate_user!
+ 
   def main
     @pets = Pet.where(user_id: current_user.id)
   end
   
   def create
-  	@pet = Pet.new(pet_params)
-  	if @pet.save
-  		redirect_to pets_path
-  	else
-  		render :new
-  	end
+    @pet = Pet.new(pet_params)
+    if @pet.save
+      redirect_to pets_path
+    else
+      render :new
+    end
   end
 
   def new
-  	@pet = Pet.new()
+    @pet = Pet.new()
   end
 
   def show
-  	@pet = set_pet
-  end
+    @pet = set_pet
+  end  
 
   def edit
   	@pet = set_pet
