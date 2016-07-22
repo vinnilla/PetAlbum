@@ -1,9 +1,23 @@
 <header>
 	<div class="container-fluid">
 		<div class="row navigation">
-			<div class="col-md-2"><h3>PetAlbum</h3></div>
-			<div class="col-md-1 col-md-offset-8 link"><%= link_to "Profile", user_path %></div>
-			<div class="col-md-1 link"><%= link_to "Edit", edit_user_path %></div>
+			<div class="col-xs-2 col-sm-2 col-md-2"><h3>PetAlbum</h3></div>
+	    <% if user_signed_in? %>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-xs-offset-8 col-sm-offset-8 col-md-offset-8 link">
+          <%= link_to "Profile", "users/main" %>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 link">
+      	  <%= link_to 'SignOut', destroy_user_session_path, :method => :delete %>
+        </div>
+    	<% else %>
+    		<div class="col-xs-1 col-sm-1 col-md-1 col-xs-offset-8 col-sm-offset-8 col-md-offset-8 link">
+        	<%= link_to 'Register', new_user_registration_path %>
+        </div>
+        or 
+        <div class="col-xs-1 col-sm-1 col-md-1">
+          <%= link_to 'Sign in', new_user_session_path %>
+        </div>
+    	<% end %>
 		</div>
 	</div>
 </header>

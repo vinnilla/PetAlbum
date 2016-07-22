@@ -1,25 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'users#main'
+
+  get 'users/main'
+
   get 'photos/main'
 
   get 'albums/main'
-
+  ######
+  #PETS
+  ######
   get 'pets/main'
-
-
-  ####
-  #USERS#
-  ####
-  get 'users/main'
   #create profile
-  post 'users' => 'users#create' #post
-  get 'users/new' => 'users#new', as: :new_user #retrieve form
+  post 'pets' => 'pets#create' #post
+  get 'pets/new' => 'pets#new', as: :new_pet #retrieve form
   #display profile
-  get 'users/:id' => 'users#show', as: :user 
+  get 'pets/:id' => 'pets#show', as: :pet 
   #edit profile
-  get 'users/:id/edit' => 'users#edit', as: :edit_user 
-  patch 'users/:id' => 'users#update' 
+  get 'pets/:id/edit' => 'pets#edit', as: :edit_pet 
+  patch 'pets/:id' => 'pets#update' 
   #delete profile
-  delete 'users/:id' => 'users#delete'
+  delete 'pets/:id' => 'pets#delete'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
