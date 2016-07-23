@@ -13,7 +13,8 @@
 	<div class="row last">
 		<% @photos.each do |photo| %>
 			<div class="col-xs-4 col-sm-4 col-md-4 pet">
-				<%= image_tag photo.avatar  %>
+				<div class="image" style = "background-image:url(<%=photo.avatar_url.to_s%>)">
+				</div>
 				<%= link_to photo.description, photo_path(photo.id) %>
 			</div>
 		<% end %>

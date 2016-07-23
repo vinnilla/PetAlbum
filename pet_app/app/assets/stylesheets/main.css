@@ -77,6 +77,13 @@ body {
 .box {
 	background-color: rgba(0,0,0,0.2);
 }
+.image {
+	width: 400px;
+	height: 200px;
+	background-position:center;
+	background-size: cover;
+
+}
 
 /*
 @mixin box_sizing {
