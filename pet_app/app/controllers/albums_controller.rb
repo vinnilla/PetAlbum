@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
 
   def main
     @albums = Album.where(pet_id: set_pet_id)
+    @pet_id = set_pet_id
   end
 
   def new
@@ -21,6 +22,7 @@ class AlbumsController < ApplicationController
   def show
     @album = set_album
     @pet_id = set_pet_id
+    @photos = Photo.where(album_id: @album.id)
   end
 
   def edit

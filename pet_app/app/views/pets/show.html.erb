@@ -1,7 +1,10 @@
-<header>
-	<h1><%= @pet.name %></h1>
-	<h4><%= "#{@pet.gender} #{@pet.breed}" %></h4>
-	<h5><%= @pet.bio %></h5>
-</header>
+<div class="box">
+	<header>
+		<h1 class="title"><%= @pet.name %></h1>
+		<h4><%= "#{@pet.gender} #{@pet.breed}" %></h4>
+		<p><%= @pet.bio %></p>
+	</header>
 
-<%= link_to "Create Album", new_album_path(@pet.id) %>
+	<div class="pet last">
+	</div>
+</div>

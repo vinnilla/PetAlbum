@@ -1,0 +1,10 @@
+<div class="container-fluid box">
+	<header>
+		<p><%= @photo.description %></p>
+	</header>
+	<div class="pet last">
+		<%= link_to "Edit", edit_photo_path(@photo.id) %><br>
+		<%= link_to "Delete", photo_path(@photo.id), :method => :delete %><br>
+		<%= link_to "Album", album_path(@photo.album_id) %>
+	</div>
+</div>

@@ -1,6 +1,20 @@
-<header>
-	<h1><%= @album.title %></h1>
-</header>
-
-
-<%= link_to "All Albums", albums_path(@album.pet_id) %>
+<div class="container-fluid box">
+	<header>
+		<h1><%= @album.title %></h1>
+		<p><%= @album.description %></p>
+	</header>
+	<div class="pet last">
+		<%= link_to "Edit", edit_album_path(@album.id) %>
+		<%= link_to "Delete", album_path(@album.id), :method => :delete %><br>
+		<%= link_to "All Albums", albums_path(@album.pet_id) %><br>
+		<%= link_to "Add Photo", new_photo_path(@album.id) %>
+	</div>
+	<!-- display photos -->
+	<div class="row last">
+		<% @photos.each do |photo| %>
+			<div class="col-xs-4 col-sm-4 col-md-4 pet">
+				<%= link_to photo.description, photo_path(photo.id) %>
+			</div>
+		<% end %>
+	</div>
+</div>

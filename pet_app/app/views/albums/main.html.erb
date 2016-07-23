@@ -1,12 +1,10 @@
-<h1>Albums</h1>
-
-<div class="container-fluid">
-	<div class="row">
+<div class="container-fluid box">
+	<h1>Albums</h1>
+	<div class="pet spacer"><%= link_to "Create Album", new_album_path(@pet_id) %></div>
+	<div class="row last">
 		<% @albums.each do |album| %>			
-			<div class="col-xs-4 col-sm-4 col-md-4">
+			<div class="col-xs-4 col-sm-4 col-md-4 pet">
 				<%= link_to album.title, album_path(album.id) %>
-				<%= link_to "Edit", edit_album_path(album.id) %>
-				<%= link_to "Delete", album_path(album.id), :method => :delete %>
 			</div>
 		<% end %>
 	</div>

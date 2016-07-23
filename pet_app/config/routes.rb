@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'users#main'
 
   get 'users' => 'users#main'
+  
   #####
   #PETS
   #####
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   get 'pets/:id' => 'pets#show', as: :pet 
   #edit profile
   get 'pets/:id/edit' => 'pets#edit', as: :edit_pet 
-  patch 'pets/:id' => 'pets#update' 
+  patch 'pets/:id' => 'pets#update', as: :update_pet 
   #delete profile
   delete 'pets/:id' => 'pets#delete'
 
@@ -29,14 +30,24 @@ Rails.application.routes.draw do
   get 'albums/:id' => 'albums#show', as: :album
 
   get 'albums/:id/edit' => 'albums#edit', as: :edit_album
-  patch 'albums/:id' => 'albums#update'
+  patch 'albums/:id' => 'albums#update', as: :update_album
 
   delete 'albums/:id' => 'albums#delete'
 
   #######
   #PHOTOS
   #######
-  get 'photos/main'
+  get 'albums/:album_id/photos/' => 'photos#main', as: :photos
+
+  get 'albums/:album_id/photos/new' => 'photos#new', as: :new_photo
+  post 'photos' => 'photos#create', as: :create_photo
+
+  get 'photos/:id' => 'photos#show', as: :photo
+
+  get 'photos/:id/edit' => 'photos#edit', as: :edit_photo
+  patch 'photos/:id' => 'photos#update', as: :update_photo
+
+  delete 'photos/:id' => 'photos#delete'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,14 +1,18 @@
-<h4>Your Pets:</h4>
-<div class="container-fluid">
-	<div class="row">
-		<% @pets.each do |pet| %>
-			<div class="col-xs-4 col-sm-4 col-md-4 pet">
-				<%= link_to pet.name, pet_path(pet.id) %>
-				<%= link_to 'edit', edit_pet_path(pet.id) %>
-				<%= link_to 'delete', pet_path(pet.id), :method => :delete %>
-			</div>
-		<% end %>
+<div class="box">
+	<h4 class="title">Your Pets</h4>
+	<div class="spacer">
+	<%= link_to "Create New Pet", 'pets/new', class: 'pet'%> <br>
+	</div>
+	<div class="container-fluid">
+		<div class="row last">
+			<% @pets.each do |pet| %>
+				<div class="col-xs-4 col-sm-4 col-md-4 pet">
+					<%= link_to pet.name, pet_path(pet.id), class: 'larger' %> <br>
+					<%= link_to 'edit', edit_pet_path(pet.id) %>
+					<%= link_to 'delete', pet_path(pet.id), :method => :delete %> <br>
+					<%= link_to 'view albums', albums_path(pet.id) %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>
-
-<%= link_to "Create New Pet", 'pets/new' %> <br>

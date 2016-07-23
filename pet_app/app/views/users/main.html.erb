@@ -1,9 +1,8 @@
-<h1 class="title">Cool Pets</h1>
-
-<div class="container-fluid">
+<div class="container-fluid box">
+	<h1 class="title">Cool Pets</h1>
 	<div class="row">
 		<% array = [] %>
-		<% while array.length < 0 do %>
+		<% while array.length < 6 do %>
 			<% test = true %>
 			<% num = rand(@pets.length).to_i %>
 			<% array.each do |y| %>

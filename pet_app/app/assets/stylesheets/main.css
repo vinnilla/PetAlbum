@@ -7,10 +7,10 @@
 .link a {
 	line-height: 4em;
 	color: white;
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 .link a:hover, .logo a:hover {
-	color:red;
+	color: rgba(175,225,255,0.9);
 }
 .logo a {
 	font-size: 2.5em;
@@ -23,26 +23,38 @@
 /*FORMS*/
 /*-----*/
 .field {
-	text-align:left;
+	font-size: 1.2em;
 }
-.entry {
+.entry, .button{
 	border-style: solid;
-	border-color: white;
-	border-bottom-color: black;
+	border-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.2);
 	margin-bottom: 2em;
 }
 .actions {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
-
-/*USERsMAIN*/
-/*---------*/
-.pet-link a {
-	color: rgba(100,0,0,1);
+.first {
+	margin-top: 2em;
 }
+.last {
+	margin-bottom: 2em;
+}
+
+/*PetsMAIN*/
+/*---------*/
 .pet-link {
 	margin-bottom: 10em;
+}
+.pet a, .spacer a, .pet-link {
+		color: rgba(175,225,255,0.9);
+}
+.pet {
+	color: rgba(175,225,255,0.9);
+}
+.pet a:hover, .pet-link a:hover, .spacer a:hover {
+	color:white;
 }
 
 /*GENERAL*/
@@ -50,9 +62,20 @@
 body {
 	font-family: 'Harmattan', sans-serif !important;
 	text-align: center;
+	background-color: rgba(0, 0, 50, 0.9) !important;
+	color: white !important;
 }
 .title {
-	margin-bottom: 1em;
+	font-size: 2em;
+}
+.larger {
+	font-size: 2em;
+}
+.spacer {
+	margin-bottom: 2em;
+}
+.box {
+	background-color: rgba(0,0,0,0.2);
 }
 
 /*
