@@ -4,6 +4,10 @@ class PetsController < ApplicationController
   def main
     @pets = Pet.where(user_id: current_user.id)
   end
+
+  def new
+    @pet = Pet.new()
+  end
   
   def create
     @pet = Pet.new(pet_params)
@@ -12,10 +16,6 @@ class PetsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @pet = Pet.new()
   end
 
   def show
@@ -27,7 +27,7 @@ class PetsController < ApplicationController
   end
 
   def update
-  	@pet = set_pets
+  	@pet = set_pet
   	if @pet.update_attributes(pet_params)
   		redirect_to pet_path
   	else

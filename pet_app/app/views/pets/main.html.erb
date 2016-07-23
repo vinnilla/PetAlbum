@@ -3,8 +3,8 @@
 	<div class="row">
 		<% @pets.each do |pet| %>
 			<div class="col-xs-4 col-sm-4 col-md-4 pet">
-				<%= link_to pet.name, pet_path(pet.id) %><br>
-				<%= link_to 'edit', edit_pet_path(pet.id) %><br>
+				<%= link_to pet.name, pet_path(pet.id) %>
+				<%= link_to 'edit', edit_pet_path(pet.id) %>
 				<%= link_to 'delete', pet_path(pet.id), :method => :delete %>
 			</div>
 		<% end %>

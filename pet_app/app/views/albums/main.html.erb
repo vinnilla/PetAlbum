@@ -1,2 +1,13 @@
-<h1>Albums#main</h1>
-<p>Find me in app/views/albums/main.html.erb</p>
+<h1>Albums</h1>
+
+<div class="container-fluid">
+	<div class="row">
+		<% @albums.each do |album| %>			
+			<div class="col-xs-4 col-sm-4 col-md-4">
+				<%= link_to album.title, album_path(album.id) %>
+				<%= link_to "Edit", edit_album_path(album.id) %>
+				<%= link_to "Delete", album_path(album.id), :method => :delete %>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -7,15 +7,17 @@
 .link a {
 	line-height: 4em;
 	color: white;
-	font-family: 'Harmattan', sans-serif;
 	font-size: 1.1em;
+}
+.link a:hover, .logo a:hover {
+	color:red;
 }
 .logo a {
 	font-size: 2.5em;
 	color: white;
 }
-.link a:hover, .logo a:hover {
-	color:red;
+.logo {
+	margin-top: 0.4em;
 }
 
 /*FORMS*/
@@ -46,10 +48,10 @@
 /*GENERAL*/
 /*-------*/
 body {
+	font-family: 'Harmattan', sans-serif !important;
 	text-align: center;
 }
 .title {
-	font-family: 'Harmattan', sans-serif;
 	margin-bottom: 1em;
 }
 

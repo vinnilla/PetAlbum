@@ -18,13 +18,13 @@ Rails.application.routes.draw do
   #delete profile
   delete 'pets/:id' => 'pets#delete'
 
-  ########
-  #ALBUUMS
-  ########
-  get 'albums' => 'albums#main'
+  #######
+  #ALBUMS
+  #######
+  get 'pets/:pet_id/albums' => 'albums#main', as: :albums
 
-  get 'albums/new' => 'albums#new', as: :new_album
-  post 'albums' => 'albums#create'
+  get 'pets/:pet_id/albums/new' => 'albums#new', as: :new_album
+  post 'albums' => 'albums#create', as: :create_album
 
   get 'albums/:id' => 'albums#show', as: :album
 

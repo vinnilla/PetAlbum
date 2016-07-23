@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 20160722163247) do
   create_table "albums", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.date     "date"
     t.integer  "likes"
-    t.integer  "pet_id"
+    t.integer  "pet_id", default: 0, null:false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 20160722163247) do
 
   create_table "photos", force: :cascade do |t|
     t.string   "description"
-    t.date     "date"
     t.integer  "likes"
     t.integer  "album_id"
     t.datetime "created_at",  null: false
