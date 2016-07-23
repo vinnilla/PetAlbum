@@ -13,6 +13,7 @@
 	<div class="row last">
 		<% @photos.each do |photo| %>
 			<div class="col-xs-4 col-sm-4 col-md-4 pet">
+				<%= image_tag photo.avatar  %>
 				<%= link_to photo.description, photo_path(photo.id) %>
 			</div>
 		<% end %>

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Carrier Wave
+gem 'carrierwave'
 # Devise 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
