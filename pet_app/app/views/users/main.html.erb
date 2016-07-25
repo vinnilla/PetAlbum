@@ -1,20 +1,10 @@
 <div class="container-fluid box">
-	<h1 class="title">Cool Pets</h1>
-	<div class="row">
-		<% array = [] %>
-		<% while array.length < 6 do %>
-			<% test = true %>
-			<% num = rand(@pets.length).to_i %>
-			<% array.each do |y| %>
-				<% test = false if y == num %>
-			<% end %>
-			<% array << num if test %>
-		<% end %>
-		
-		<% array.each do |index| %>
-			<% @pet = @pets[index] %>
+	<h1 class="title last">Cool Pets</h1>
+	<div class="row">	
+		<% (@pet_array.length).times do |x| %>
 			<div class="col-xs-4 col-sm-4 col-md-4 pet-link">
-				<%= link_to @pet.name, pet_path(@pet.id) %>
+				<%= image_tag @photo_array[x].avatar_url(:thumb).to_s %><br>
+				<%= link_to @pet_array[x].name, pet_path(@pet_array[x].id), class: "larger" %>
 			</div>
 		<% end %>
 	</div>

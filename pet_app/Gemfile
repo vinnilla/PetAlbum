@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Carrier Wave
 gem 'carrierwave'
+gem 'mini_magick'
 # Devise 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

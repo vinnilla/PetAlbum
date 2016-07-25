@@ -20,6 +20,17 @@ class PetsController < ApplicationController
 
   def show
     @pet = set_pet
+    @albums = Album.where(pet_id: @pet.id)
+    photos = Photo.all
+    @photos = []
+    @albums.each do |album|
+      photos.each do |photo|
+        if photo.album_id == album.id
+          @photos << photo
+          break
+        end
+      end
+    end
   end  
 
   def edit

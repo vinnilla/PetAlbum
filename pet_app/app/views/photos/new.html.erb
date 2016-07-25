@@ -20,7 +20,12 @@
   <div class="field row last">
     <%= f.file_field :avatar, class: "col-xs-6 col-sm-4 col-md-2 col-xs-offset-4 col-sm-offset-4 col-md-offset-5" %>
   </div>
-  <!-- hidden field to add relationship between album and pet -->
+  <div class="field row last">
+    <%= f.label :remote_avatar_url, "or image URL", class:"col-xs-1 col-sm-1 col-md-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-4" %>
+    <%= f.text_field :remote_avatar_url, class: "col-xs-6 col-sm-4 col-md-2 entry", autocomplete: "off" %>
+  </div>
+  
+  <!-- hidden field to add relationship between photo and album -->
   <div class="field">
     <%= f.hidden_field :album_id, :value => @album_id %>
   </div>

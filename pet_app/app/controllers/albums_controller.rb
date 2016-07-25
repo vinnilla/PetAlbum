@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
   def main
     @albums = Album.where(pet_id: set_pet_id)
     @pet_id = set_pet_id
+    @pet = Pet.where(id: @pet_id)
   end
 
   def new
@@ -13,7 +14,7 @@ class AlbumsController < ApplicationController
   def create
   	@album = Album.new(album_params)
     if @album.save
-      redirect_to album_path @album.id
+      redirect_to album_path(@album.pet_id, @album.id)
     else
       render :new
     end
@@ -22,6 +23,7 @@ class AlbumsController < ApplicationController
   def show
     @album = set_album
     @pet_id = set_pet_id
+    @pet = Pet.where(id: @pet_id)
     @photos = Photo.where(album_id: @album.id)
   end
 
@@ -32,7 +34,7 @@ class AlbumsController < ApplicationController
   def update
     @album = set_album
     if @album.update_attributes(album_params)
-      redirect_to album_path @album.id
+      redirect_to album_path @album.pet_id, @album.id
     else
       render :edit
     end
@@ -42,7 +44,7 @@ class AlbumsController < ApplicationController
     @album = set_album
     @pet_id = @album.pet_id
     @album.destroy
-    redirect_to albums_path(@pet_id)
+    redirect_to pet_path(@pet_id)
   end
 
   private

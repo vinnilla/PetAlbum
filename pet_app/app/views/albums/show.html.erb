@@ -4,18 +4,20 @@
 		<p><%= @album.description %></p>
 	</header>
 	<div class="pet last">
-		<%= link_to "Edit", edit_album_path(@album.id) %>
-		<%= link_to "Delete", album_path(@album.id), :method => :delete %><br>
+		<%= link_to "Edit", edit_album_path(@pet_id, @album.id) %>
+		<%= link_to "Delete", album_path(@pet_id, @album.id), :method => :delete %><br>
+		<%= link_to "Add Photo", new_photo_path(@pet_id, @album.id) %><br>
+		<%= link_to "Back to Pet Page", pet_path(@pet_id) %>
+		<!-- 
 		<%= link_to "All Albums", albums_path(@album.pet_id) %><br>
-		<%= link_to "Add Photo", new_photo_path(@album.id) %>
+		 -->
 	</div>
 	<!-- display photos -->
 	<div class="row last">
 		<% @photos.each do |photo| %>
-			<div class="col-xs-4 col-sm-4 col-md-4 pet">
-				<div class="image" style = "background-image:url(<%=photo.avatar_url.to_s%>)">
-				</div>
-				<%= link_to photo.description, photo_path(photo.id) %>
+			<div class="col-xs-4 col-sm-4 col-md-2 pet">
+			  <%= image_tag photo.avatar_url(:thumb).to_s %><br>
+				<%= link_to photo.description, photo_path(@pet_id, @album.id, photo.id), class:"larger" %>
 			</div>
 		<% end %>
 	</div>

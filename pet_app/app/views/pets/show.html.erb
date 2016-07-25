@@ -6,5 +6,23 @@
 	</header>
 
 	<div class="pet last">
+		<%= link_to "Create Album", new_album_path(@pet.id) %><br>
+		<%= link_to "Back to Profile", pets_path %><br>
 	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<% counter = 0 %>
+			<% @albums.each do |album| %>
+				<div class="col-xs-4 col-sm-4 col-md-2 pet">
+					<% if @photos.length != counter %>
+						<%= image_tag @photos[counter].avatar_url(:thumb).to_s %> <br>
+						<% counter += 1 %>
+					<% end %>
+					<%= link_to album.title, album_path(@pet.id, album.id) %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
 </div>

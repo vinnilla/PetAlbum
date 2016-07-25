@@ -11,8 +11,10 @@ class PhotosController < ApplicationController
 
   def create
   	@photo = Photo.new(photo_params)
+    @album_id = set_album_id
+    @pet_id = set_pet_id
     if @photo.save
-      redirect_to album_path @photo.album_id
+      redirect_to album_path @pet_id, @album_id
     else
       render :new
     end
@@ -21,6 +23,7 @@ class PhotosController < ApplicationController
   def show
     @photo = set_photo
     @album_id = set_album_id
+    @pet_id = set_pet_id
   end
 
   def edit
@@ -29,8 +32,10 @@ class PhotosController < ApplicationController
 
   def update
     @photo = set_photo
+    @album_id = set_album_id
+    @pet_id = set_pet_id
     if @photo.update_attributes(photo_params)
-      redirect_to photo_path @photo.id
+      redirect_to photo_path @pet_id, @album_id, @photo.id
     else
       render :edit
     end
@@ -38,9 +43,10 @@ class PhotosController < ApplicationController
 
   def delete
     @photo = set_photo
-    @album_id = @photo.album_id
+    @album_id = set_album_id
+    @pet_id = set_pet_id
     @photo.destroy
-    redirect_to album_path(@album_id)
+    redirect_to album_path @pet_id, @album_id
   end
 
   private
@@ -53,8 +59,12 @@ class PhotosController < ApplicationController
     params[:album_id]
   end
 
+  def set_pet_id
+    params[:pet_id]
+  end
+
   def photo_params
-  	params.require(:photo).permit(:description, :album_id, :avatar)
+  	params.require(:photo).permit(:description, :album_id, :avatar, :remote_avatar_url)
   end
 
 end
