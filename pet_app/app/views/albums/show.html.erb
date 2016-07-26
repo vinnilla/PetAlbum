@@ -4,9 +4,13 @@
 		<p><%= @album.description %></p>
 	</header>
 	<div class="pet last">
-		<%= link_to "Edit", edit_album_path(@pet_id, @album.id) %>
-		<%= link_to "Delete", album_path(@pet_id, @album.id), :method => :delete %><br>
-		<%= link_to "Add Photo", new_photo_path(@pet_id, @album.id) %><br>
+		<% if @user.id == @pet[:user_id] %>
+			<%= link_to "Edit", edit_album_path(@pet_id, @album.id) %>
+			<%= link_to "Delete", album_path(@pet_id, @album.id), :method => :delete %><br>
+			<%= link_to "Add Photo", new_photo_path(@pet_id, @album.id) %><br>
+		<% end %> 
+		<% puts "Pet belongs to #{@pet}" %>
+		<% puts "Current user is #{@user.id}" %>
 		<%= link_to "Back to Pet Page", pet_path(@pet_id) %>
 		<!-- 
 		<%= link_to "All Albums", albums_path(@album.pet_id) %><br>

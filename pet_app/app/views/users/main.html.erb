@@ -1,10 +1,11 @@
-<div class="container-fluid box">
-	<h1 class="title last">Cool Pets</h1>
-	<div class="row">	
+<div id="wrapper">
+	<div id="columns">	
 		<% (@pet_array.length).times do |x| %>
-			<div class="col-xs-4 col-sm-4 col-md-4 pet-link">
+			<div class="pin">
 				<%= image_tag @photo_array[x].avatar_url(:thumb).to_s %><br>
-				<%= link_to @pet_array[x].name, pet_path(@pet_array[x].id), class: "larger" %>
+				<%= link_to @pet_array[x].name, pet_path(@pet_array[x].id) %>
+				<p><%="#{@pet_array[x].gender} #{@pet_array[x].breed}"%></p>
+				<p><%=@pet_array[x].bio%></p>
 			</div>
 		<% end %>
 	</div>

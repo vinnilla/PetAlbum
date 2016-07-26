@@ -19,16 +19,24 @@ class UsersController < ApplicationController
   		if @test
   			#find album belonging to pet
   			puts @pets[@num].id
-  			album = Album.where(pet_id: @pets[@num].id)
-  			if album.length != 0
+  			@album = Album.where(pet_id: @pets[@num].id)
+  			if @album.length != 0
 	  			#find one photo
-	  			@photo_array << Photo.where(album_id: album[0].id)[0]
+	  			@photo_array << Photo.where(album_id: @album[0].id)[0]
   				@pet_array << @pets[@num]
           @pet_indexes << @num
 	  		end
   		end
 
   	end
+  end
+
+  def search
+  end
+
+  def results
+    @q = params[:query]
+    @pet = Pet.where({name: @q})
   end
 
 end

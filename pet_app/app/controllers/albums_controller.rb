@@ -23,8 +23,9 @@ class AlbumsController < ApplicationController
   def show
     @album = set_album
     @pet_id = set_pet_id
-    @pet = Pet.where(id: @pet_id)
+    @pet = Pet.where(id: @pet_id).get_user_id
     @photos = Photo.where(album_id: @album.id)
+    @user = current_user
   end
 
   def edit

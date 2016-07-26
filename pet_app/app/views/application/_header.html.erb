@@ -1,18 +1,17 @@
 <header>
-	<div class="container-fluid">
+	<div class="container-fluid header">
 		<div class="row navigation">
-			<div class="col-xs-4 col-sm-3 col-md-2 logo">
+			<div class="col-xs-5 col-sm-3 col-md-3 logo">
         <%= link_to "Pet Album", users_path %>
       </div>
 	    <% if user_signed_in? %>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-xs-offset-5 col-sm-offset-6 col-md-offset-8 link">
-          <%= link_to "Profile", pets_path %>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-1 link">
-      	  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+        <div class="col-xs-3 col-sm-2 col-md-2 col-xs-offset-4 col-sm-offset-7 col-md-offset-7 link">
+          <%= link_to "", pets_path, class:"fa fa-user" %>
+          &nbsp; &nbsp; &nbsp;
+      	  <%= link_to '', destroy_user_session_path, :method => :delete, class:"fa fa-sign-out" %>
         </div>
     	<% else %>
-    		<div class="col-xs-1 col-sm-1 col-md-1 col-xs-offset-5 col-sm-offset-6 col-md-offset-8 link">
+    		<div class="col-xs-1 col-sm-2 col-md-1 col-xs-offset-5 col-sm-offset-5 col-md-offset-7 link">
         	<%= link_to 'Register', new_user_registration_path %>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-1 link">

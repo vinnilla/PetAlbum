@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'users#main'
 
   get 'users' => 'users#main'
+  get 'users/search'
+  get 'users/results', as: :results
   
   #####
   #PETS

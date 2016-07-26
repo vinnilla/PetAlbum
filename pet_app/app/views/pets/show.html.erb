@@ -1,4 +1,4 @@
-<div class="box">
+<div class="container-fluid box">
 	<header>
 		<h1 class="title"><%= @pet.name %></h1>
 		<h4><%= "#{@pet.gender} #{@pet.breed}" %></h4>
@@ -14,12 +14,12 @@
 		<div class="row">
 			<% counter = 0 %>
 			<% @albums.each do |album| %>
-				<div class="col-xs-4 col-sm-4 col-md-2 pet">
+				<div class="col-xs-12 col-sm-6 col-md-3 pet">
 					<% if @photos.length != counter %>
-						<%= image_tag @photos[counter].avatar_url(:thumb).to_s %> <br>
+						<%= image_tag @photos[counter].avatar_url(:thumb).to_s, class: "photo" %> <br>
 						<% counter += 1 %>
 					<% end %>
-					<%= link_to album.title, album_path(@pet.id, album.id) %>
+					<%= link_to album.title, album_path(@pet.id, album.id), class: "larger" %>
 				</div>
 			<% end %>
 		</div>
