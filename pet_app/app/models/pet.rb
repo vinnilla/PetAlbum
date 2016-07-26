@@ -1,6 +1,9 @@
 class Pet < ApplicationRecord
-	belongs_to :user
+	# belongs_to :user
 	has_many :albums
+	has_many :photos, through: :albums
+
+	has_and_belongs_to_many :users
 
 	def self.search(search)
 		# if search

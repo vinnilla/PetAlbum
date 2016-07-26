@@ -1,3 +1,4 @@
 class Follower < ApplicationRecord
-	belongs_to :user, :pet
+	belongs_to :user
+	belongs_to :pet
 end

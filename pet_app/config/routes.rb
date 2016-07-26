@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'users#main'
 
   get 'users' => 'users#main'
-  get 'users/search'
-  get 'users/results', as: :results
+  
+  post 'pets/:id' => 'users#follow', as: :follow
   
   #####
   #PETS

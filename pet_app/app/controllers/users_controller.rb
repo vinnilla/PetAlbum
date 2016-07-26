@@ -33,15 +33,13 @@ class UsersController < ApplicationController
 	  		end
   		end
   	end
-
   end
 
-  def search
-  end
-
-  def results
-    @q = params[:query]
-    @pet = Pet.where({name: @q})
+  def follow
+    pet = Pet.find(params[:id])
+    user = User.find(current_user.id)
+    user.pets << pet
+    redirect_to users_path 
   end
 
 end
