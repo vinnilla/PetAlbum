@@ -11,6 +11,7 @@ class PetsController < ApplicationController
   
   def create
     @pet = Pet.new(pet_params)
+    @pet.search_terms = "#{@pet.name} #{@pet.gender} #{@pet.breed} #{@pet.species}"
     if @pet.save
       redirect_to pets_path
     else
@@ -59,6 +60,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-  	params.require(:pet).permit(:name, :gender, :breed, :bio, :user_id)
+  	params.require(:pet).permit(:name, :gender, :breed, :species, :bio, :user_id, :search_terms)
   end
 end

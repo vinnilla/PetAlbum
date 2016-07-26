@@ -6,6 +6,11 @@ HEADER*/
 	font-size: 1.2em;
 }
 
+a {
+	color: rgba(0,0,0,0.7) !important;
+	text-decoration: underline !important;
+}
+
 .link {
 	line-height: 50px;
 	font-size: 25px;
@@ -14,12 +19,13 @@ HEADER*/
 
 .navigation {
 	background-color: black;
-	box-shadow: 2px 2px 1px gray;
+	box-shadow: 1px 5px 5px gray;
 }
 
 .navigation a {
 	color: white !important;
 	opacity: 1;
+	text-decoration: none !important;
 }
 
 
@@ -49,23 +55,21 @@ a:hover {
 .field {
 	font-size: 1.2em;
 }
-.entry, .button{
+/*.entry, .button{
 	border-style: solid;
 	border-color: rgba(0,0,0,0.3);
 	background-color: rgba(0,0,0,0.2);
 	margin-bottom: 2em;
+}*/
+.form_box {
+	max-width: 400px;
+	min-width: 200px;
+	margin: 0 auto;
+	text-align: center;
 }
-.actions {
-	margin-top: 1em;
-	margin-bottom: 1em;
+.lower {
+	line-height: 35px;
 }
-.first {
-	margin-top: 2em;
-}
-.last {
-	margin-bottom: 2em;
-}
-
 /*PetsMAIN*/
 /*---------*/
 .pet-link {
@@ -74,21 +78,22 @@ a:hover {
 	display: inline-block;
 }
 .pet a, .spacer a, .pet-link {
-	color: rgba(175,225,255,0.9);
+	color: black;
 }
 .pet {
-	color: rgba(175,225,255,0.9);
+	color: black;
 	padding: 0 auto !important;
 }
 .pet a:hover, .pet-link a:hover, .spacer a:hover {
-	color:white;
+	opacity: 0.8;
+	text-decoration:none !important;
 }
 
 /*GENERAL*/
 /*-------*/
 body {
 	font-family: 'Roboto', sans-serif !important;
-	color: white !important;
+	color: black !important;
 }
 .title {
 	font-size: 2em;
@@ -96,25 +101,27 @@ body {
 }
 .larger {
 	font-size: 2em;
-	position:absolute;
+	/*position:absolute;
 	bottom: 10px;
 	left: 20px;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.8);*/
 }
 .spacer {
 	margin-bottom: 2em;
 }
 
 .box {
-	max-width: 98%;	
+	max-width: 98%;
 /*
 	background-image: url(/assets/tree.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 */	
 	min-height: 850px;
+	text-align: center;
 /*	border-radius: 50px;*/
 }
+
 
 .left {
 	margin-top: 2%;
@@ -148,17 +155,34 @@ body {
 .photo:hover {
 	opacity: 1;
 }
-
-
+.clear {
+	background-color: rgba(0,0,0,0);
+	border: none;
+	color: white;
+	font-size: 15px;
+}
+#search-form {
+	display:inline;
+}
+.search-bar {
+	margin-top: 15px;
+}
+.hidden_click{
+	opacity:0;
+	position:relative;
+	top: 2px;
+	right: 18px;
+}
+.merge {
+	position:relative;
+}
 
 /*PINTEREST LAYOUT*/
 #wrapper {
 	width: 95%;
 	max-width: 1800px;
 	min-width: 800px;
-/*
 	margin: 50px auto;
-*/
 }
 
 #columns {
@@ -175,7 +199,7 @@ body {
 
 .pin {
 	display: inline-block;
-	background: #FEFEFE;
+	background: #FEFEFE !important;
 	border: 2px solid #FAFAFA;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 	margin: 0 2px 15px;
@@ -229,6 +253,10 @@ body {
 
 #columns:hover .pin:not(:hover) {
 	opacity: 0.8;
+}
+
+.name {
+	font-size: 2em;
 }
 
 

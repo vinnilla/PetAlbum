@@ -1,9 +1,9 @@
 <div class="container-fluid box">
 	<header>
-		<p><%= @photo.description %></p>
+		<p class="larger"><%= @photo.description %></p>
 	</header>
 	<div class="pet last">
-		<%= link_to "Edit", edit_photo_path(@pet_id, @album_id, @photo.id) %><br>
+		<%= link_to "Edit", edit_photo_path(@pet_id, @album_id, @photo.id) %> &nbsp;&nbsp;
 		<%= link_to "Delete", photo_path(@pet_id, @album_id, @photo.id), :method => :delete %><br>
 		<%= link_to "Back to Album", album_path(@pet_id, @photo.album_id) %><br>
 		<%= image_tag @photo.avatar_url.to_s %>

@@ -29,10 +29,11 @@ ActiveRecord::Schema.define(version: 20160723062136) do
     t.string   "gender"
     t.string   "breed"
     t.string   "bio"
-    t.string   "prof_pic"
-    t.integer  "user_id",    default: 0, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "species"
+    t.string   "search_terms"
+    t.integer  "user_id",      default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "pets_users", id: false, force: :cascade do |t|

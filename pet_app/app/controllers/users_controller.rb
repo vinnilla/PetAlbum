@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
   def main
-  	@pets = Pet.all
+    if params[:search]
+      @pets = Pet.search(params[:search])
+    else
+    	@pets = Pet.all
+    end
+    # @pets = Pet.search(params[:search])
   	@photos = Photo.all
   	@pet_array = []
     @pet_indexes = []
@@ -27,8 +32,8 @@ class UsersController < ApplicationController
           @pet_indexes << @num
 	  		end
   		end
-
   	end
+
   end
 
   def search

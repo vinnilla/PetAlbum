@@ -1,3 +1,9 @@
+<% form_tag users_path, :method => :get do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
 <div id="wrapper">
 	<div id="columns">	
 		<% (@pet_array.length).times do |x| %>

@@ -5,7 +5,8 @@ class CreatePets < ActiveRecord::Migration[5.0]
       t.string :gender
       t.string :breed
       t.string :bio
-      t.string :prof_pic
+      t.string :species
+      t.string :search_terms
       t.integer :user_id, null: false, default: 0
 
       t.timestamps

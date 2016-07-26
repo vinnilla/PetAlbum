@@ -11,24 +11,30 @@
       </ul>
     </div>
   <% end %>
-<div class="box">
-<h1 class="box">New Album</h1>
-  <div class="field row first">
-    <%= f.label "Title", class:"col-xs-1 col-sm-1 col-md-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-4" %>
-    <%= f.text_field :title, class:"col-xs-6 col-sm-4 col-md-2 entry", autofocus: true, autocomplete: "off" %>
-  </div>
-  <div class="field row">
-    <%= f.label "Description", class:"col-xs-1 col-sm-1 col-md-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-4" %>
-    <%= f.text_field :description, class:"col-xs-6 col-sm-4 col-md-2 entry", autocomplete: "off" %>
-  </div>
-  <!-- hidden field to add relationship between album and pet -->
-  <div class="field">
-    <%= f.hidden_field :pet_id, :value => @pet_id %>
-  </div>
 
-  <div class="actions row last">
-    <%= f.submit "Save", class: "button"%>
+  <div class="form_box form-horizontal">
+    <h1>New Album</h1>
+    <div class="form-group first">
+      <%= f.label "Title", class:"col-md-3 lower"%>
+      <div class="col-md-9">      
+        <%= f.text_field :title, class:"form-control", placeholder: "Title", autofocus: true, autocomplete: "off" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label "Description", class:"col-md-3 lower" %>
+      <div class="col-md-9">      
+        <%= f.text_field :description, class:"form-control", placeholder: "Description", autocomplete: "off" %>
+      </div>
+    </div>
+
+    <!-- hidden field to add relationship between pet and current user -->
+    <%= f.hidden_field :pet_id, :value => @pet_id %>
+
+    <div class="form-group">
+      <%= f.submit "Save", class: "button"%>
+    </div>
   </div>
-</div>
 
 <% end %>
+
+  

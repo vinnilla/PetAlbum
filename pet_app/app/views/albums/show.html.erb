@@ -1,14 +1,14 @@
-<div class="container-fluid box">
+<div class="box" id="wrapper">
 	<header>
-		<h1><%= @album.title %></h1>
+		<h1><%= "#{@album.title} Album" %></h1>
 		<p><%= @album.description %></p>
 	</header>
 	<div class="pet last">
-		<% if @user.id == @pet[:user_id] %>
-			<%= link_to "Edit", edit_album_path(@pet_id, @album.id) %>
-			<%= link_to "Delete", album_path(@pet_id, @album.id), :method => :delete %><br>
-			<%= link_to "Add Photo", new_photo_path(@pet_id, @album.id) %><br>
-		<% end %> 
+
+		<%= link_to "Edit", edit_album_path(@pet_id, @album.id) %> &nbsp;&nbsp;
+		<%= link_to "Delete", album_path(@pet_id, @album.id), :method => :delete %> &nbsp;&nbsp;
+		<%= link_to "Add Photo", new_photo_path(@pet_id, @album.id) %><br>
+
 		<% puts "Pet belongs to #{@pet}" %>
 		<% puts "Current user is #{@user.id}" %>
 		<%= link_to "Back to Pet Page", pet_path(@pet_id) %>
@@ -17,11 +17,11 @@
 		 -->
 	</div>
 	<!-- display photos -->
-	<div class="row last">
+	<div id="columns">
 		<% @photos.each do |photo| %>
-			<div class="col-xs-4 col-sm-4 col-md-2 pet">
-			  <%= image_tag photo.avatar_url(:thumb).to_s %><br>
-				<%= link_to photo.description, photo_path(@pet_id, @album.id, photo.id), class:"larger" %>
+			<div class="pin">
+			  <%= image_tag photo.avatar_url(:thumb).to_s %>
+				<%= link_to photo.description, photo_path(@pet_id, @album.id, photo.id) %>
 			</div>
 		<% end %>
 	</div>

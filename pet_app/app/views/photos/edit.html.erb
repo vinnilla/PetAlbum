@@ -11,16 +11,18 @@
       </ul>
     </div>
   <% end %>
-<div class="box">
-<h1 class="box">Edit Photo</h1>
-  <div class="field row first">
-    <%= f.label "Description", class:"col-xs-1 col-sm-1 col-md-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-4" %>
-    <%= f.text_field :description, class:"col-xs-6 col-sm-4 col-md-2 entry", autofocus: true, autocomplete: "off" %>
+  
+  <div class="form_box form-horizontal">
+    <h1>Edit Photo</h1>
+    <div class="form-group first">
+      <%= f.label "Description", class:"col-md-3 lower"%>
+      <div class="col-md-9">      
+        <%= f.text_field :description, class:"form-control", autofocus: true, autocomplete: "off" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save", class: "button"%>
   </div>
-
-  <div class="actions row last">
-    <%= f.submit "Save", class: "button"%>
-  </div>
-</div>
 
 <% end %>
+
