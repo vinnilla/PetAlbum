@@ -6,7 +6,9 @@
 	</header>
 	
 	<div class="pet last">
-		<%= link_to "Create Album", new_album_path(@pet.id) %>
+		<% if @pet.user_id == current_user.id %>
+			<%= link_to "Create Album", new_album_path(@pet.id) %>
+		<%end %>
 	</div>
 	<h2 class="page">Albums</h2>
 	<div id="columns">

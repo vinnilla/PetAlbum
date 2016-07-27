@@ -24,6 +24,8 @@ class PhotosController < ApplicationController
     @photo = set_photo
     @album_id = set_album_id
     @pet_id = set_pet_id
+    @pet = Pet.where(id: @pet_id)
+
   end
 
   def edit

@@ -52,5 +52,10 @@ Rails.application.routes.draw do
 
   delete 'pets/:pet_id/albums/:album_id/photos/:id' => 'photos#delete'
 
+  ##########
+  #FOLLOWING
+  ##########
+  post 'pets/:id' => 'pets#follow', as: :follow_pet
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,9 +1,16 @@
 class Pet < ApplicationRecord
-	# belongs_to :user
-	has_many :albums
+	belongs_to :user
+	has_many :albums, dependent: :destroy
 	has_many :photos, through: :albums
+	has_many :active_relationships,
+		class_name: "Relationship",
+		foreign_key: "follower_id",
+		dependent: :destroy
+	has_many :following, through: :active_relationships, source: :followed
 
-	has_and_belongs_to_many :users
+	# has_and_belongs_to_many :users
+
+	# @pet = Pet.first
 
 	def self.search(search)
 		# if search
@@ -13,5 +20,9 @@ class Pet < ApplicationRecord
 		# end
 		where("search_terms ILIKE ?", "%#{search}%")
 	end
+
+	# def self.get_user_id
+	# 	@pet.user.id
+	# end
 
 end

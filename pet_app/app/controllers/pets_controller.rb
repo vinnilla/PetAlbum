@@ -53,6 +53,11 @@ class PetsController < ApplicationController
   	redirect_to pets_path
   end
 
+  def follow
+    @user = current_user
+    @user.active_relationships.create(followed_id: set_pet.id)
+  end
+
   private
 
   def set_pet

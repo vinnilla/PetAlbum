@@ -11,7 +11,16 @@ class UsersController < ApplicationController
   	@pet_array = []
     @pet_indexes = []
   	@photo_array = []
-  	while @pet_array.length < 50 and @pet_array.length < @pets.length do
+    @following = []
+    user = current_user
+
+    # @pets.each do |pet|
+    #   if user.following.include?(pet)
+    #     @following << pet
+    #   end
+    # end
+
+    while @pet_array.length < 50 and @pet_array.length < @pets.length do
   		@test = true
   		@num = rand(@pets.length).to_i
 
@@ -35,11 +44,5 @@ class UsersController < ApplicationController
   	end
   end
 
-  def follow
-    pet = Pet.find(params[:id])
-    user = User.find(current_user.id)
-    user.pets << pet
-    redirect_to users_path 
-  end
 
 end
