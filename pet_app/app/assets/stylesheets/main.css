@@ -118,7 +118,7 @@ body {
 	background-size: cover;
 */	
 	min-height: 850px;
-	text-align: center;
+	text-align: left;
 /*	border-radius: 50px;*/
 }
 
@@ -154,6 +154,9 @@ body {
 }
 .photo:hover {
 	opacity: 1;
+}
+.page {
+	text-align: left;
 }
 
 
@@ -201,7 +204,7 @@ body {
 #wrapper {
 	width: 95%;
 	max-width: 1800px;
-	min-width: 800px;
+	min-width: 500px;
 	margin: 50px auto;
 }
 
@@ -212,7 +215,7 @@ body {
 	-moz-column-count: 3;
 	-moz-column-gap: 10px;
 	-moz-column-fill: auto;
-	column-count: 3;
+	column-count: 2;
 	column-gap: 15px;
 	column-fill: auto;
 }
@@ -229,7 +232,7 @@ body {
 	padding: 15px;
 	padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
-	opacity: 1;
+	opacity: 0.8;
 	
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -255,7 +258,7 @@ body {
 	text-decoration: none !important;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 660px) {
 	#columns {
 		-webkit-column-count: 4;
 		-moz-column-count: 4;
@@ -271,8 +274,8 @@ body {
 	}
 }
 
-#columns:hover .pin:not(:hover) {
-	opacity: 0.8;
+.pin:hover {
+	opacity: 1;
 }
 
 .name {

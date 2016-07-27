@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   	@pet_array = []
     @pet_indexes = []
   	@photo_array = []
-  	while @pet_array.length < 6 and @pet_array.length < @pets.length do
+  	while @pet_array.length < 50 and @pet_array.length < @pets.length do
   		@test = true
   		@num = rand(@pets.length).to_i
 
