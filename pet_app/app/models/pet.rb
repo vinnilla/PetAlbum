@@ -21,8 +21,4 @@ class Pet < ApplicationRecord
 		where("search_terms ILIKE ?", "%#{search}%")
 	end
 
-	# def self.get_user_id
-	# 	@pet.user.id
-	# end
-
 end
